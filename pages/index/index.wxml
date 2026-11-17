@@ -1,0 +1,102 @@
+<!--
+  pages/index/index.wxml
+  首页：轮播横幅 + 分类入口 + 热门商品 + 联系我们入口
+-->
+<view class="page">
+  <!-- 1. 顶部品牌栏 -->
+  <view class="brand-bar">
+    <image class="brand-logo" src="/assets/images/logo.png" mode="aspectFit" />
+    <view class="brand-info">
+      <text class="brand-name">深圳市金丽星服装有限公司</text>
+      <text class="brand-slogan">专注工装 · 团体服装定制</text>
+    </view>
+  </view>
+
+  <!-- 2. 轮播横幅 -->
+  <view class="banner-wrap">
+    <swiper
+      class="banner"
+      indicator-dots="{{true}}"
+      indicator-color="rgba(255,255,255,0.5)"
+      indicator-active-color="#e8833a"
+      autoplay="{{true}}"
+      interval="{{4000}}"
+      duration="{{500}}"
+      circular="{{true}}">
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image class="banner-img" src="{{item.image}}" mode="aspectFill" bindtap="onBannerTap" data-url="{{item.url}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 3. 服务亮点 -->
+  <view class="highlights">
+    <view class="highlight" wx:for="{{highlights}}" wx:key="text">
+      <text class="highlight-icon">{{item.icon}}</text>
+      <text class="highlight-text">{{item.text}}</text>
+    </view>
+  </view>
+
+  <!-- 4. 分类入口 -->
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">产品分类</text>
+      <text class="section-more">全品类定制 ></text>
+    </view>
+    <view class="category-grid">
+      <view class="category-item" wx:for="{{categories}}" wx:key="key" bindtap="onCategoryTap" data-key="{{item.key}}">
+        <view class="category-img-wrap">
+          <image class="category-img" src="{{item.icon}}" mode="aspectFill" />
+        </view>
+        <text class="category-name">{{item.name}}</text>
+        <text class="category-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 5. 热门商品 -->
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">热门推荐</text>
+      <text class="section-more" bindtap="goProducts">查看全部 ></text>
+    </view>
+    <view class="product-grid">
+      <view class="product-card" wx:for="{{hotProducts}}" wx:key="id" bindtap="onProductTap" data-id="{{item.id}}">
+        <image class="product-img" src="{{item.image}}" mode="aspectFill" />
+        <view class="product-info">
+          <text class="product-name">{{item.name}}</text>
+          <text class="product-desc">{{item.desc}}</text>
+          <view class="product-bottom">
+            <text class="product-price">{{item.price > 0 ? '¥' + item.price + '起' : '按需报价'}}</text>
+            <text class="product-moq">{{item.moq}}件起订</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 6. 定制流程 -->
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">定制流程</text>
+    </view>
+    <view class="flow-list">
+      <view class="flow-item" wx:for="{{flows}}" wx:key="step">
+        <view class="flow-num">{{item.step}}</view>
+        <text class="flow-title">{{item.title}}</text>
+        <text class="flow-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 7. 联系我们入口 -->
+  <view class="contact-banner" bindtap="goAbout">
+    <view class="contact-left">
+      <text class="contact-title">需要定制？联系我们</text>
+      <text class="contact-sub">免费设计打样 · 专业顾问一对一服务</text>
+    </view>
+    <view class="contact-btn">立即联系</view>
+  </view>
+
+  <view class="footer">深圳市金丽星服装有限公司 · 工装团体定制</view>
+</view>
