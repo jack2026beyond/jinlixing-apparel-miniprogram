@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/products/products",
+    "pages/detail/detail",
+    "pages/inquiry/inquiry",
+    "pages/result/result",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarTitleText": "金丽星服装定制",
+    "navigationBarBackgroundColor": "#1e4e8a",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f7fa",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#204e8a",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/images/tab-home.png",
+        "selectedIconPath": "assets/images/tab-home-on.png"
+      },
+      {
+        "pagePath": "pages/products/products",
+        "text": "产品",
+        "iconPath": "assets/images/tab-product.png",
+        "selectedIconPath": "assets/images/tab-product-on.png"
+      },
+      {
+        "pagePath": "pages/inquiry/inquiry",
+        "text": "询价",
+        "iconPath": "assets/images/tab-inquiry.png",
+        "selectedIconPath": "assets/images/tab-inquiry-on.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于我们",
+        "iconPath": "assets/images/tab-about.png",
+        "selectedIconPath": "assets/images/tab-about-on.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
