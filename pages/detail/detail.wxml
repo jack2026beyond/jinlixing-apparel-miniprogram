@@ -1,0 +1,77 @@
+<!-- pages/detail/detail.wxml 商品详情页：图片 + 规格 + 尺码 + 起订量 + 报价说明 -->
+<view class="page" wx:if="{{product}}">
+  <!-- 商品主图 -->
+  <image class="detail-img" src="{{product.image}}" mode="aspectFill" />
+
+  <view class="detail-body">
+    <!-- 名称与价格 -->
+    <view class="head">
+      <text class="name">{{product.name}}</text>
+      <text class="price">{{product.price > 0 ? '¥' + product.price + ' / 件起' : '按需报价'}}</text>
+    </view>
+    <text class="desc">{{product.desc}}</text>
+
+    <!-- 核心参数 -->
+    <view class="meta-row">
+      <view class="meta-item">
+        <text class="meta-label">起订量</text>
+        <text class="meta-value">{{product.moq}} 件</text>
+      </view>
+      <view class="meta-item">
+        <text class="meta-label">交期</text>
+        <text class="meta-value">7-15 工作日</text>
+      </view>
+      <view class="meta-item">
+        <text class="meta-label">定制方式</text>
+        <text class="meta-value">来图来样</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 可选规格 -->
+  <view class="section" wx:if="{{product.specs.length > 0}}">
+    <view class="section-head">
+      <text class="section-title">可选规格</text>
+    </view>
+    <view class="option-list">
+      <text class="option {{selectedSpec === item ? 'selected' : ''}}"
+        wx:for="{{product.specs}}" wx:key="*this"
+        bindtap="onSelectSpec" data-value="{{item}}">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 可选尺码 -->
+  <view class="section" wx:if="{{product.sizes.length > 0}}">
+    <view class="section-head">
+      <text class="section-title">可选尺码</text>
+    </view>
+    <view class="option-list">
+      <text class="option {{selectedSize === item ? 'selected' : ''}}"
+        wx:for="{{product.sizes}}" wx:key="*this"
+        bindtap="onSelectSize" data-value="{{item}}">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 报价与工艺说明 -->
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">报价说明</text>
+    </view>
+    <view class="detail-line" wx:for="{{product.details}}" wx:key="*this">
+      <text class="dot">•</text>
+      <text class="detail-text">{{item}}</text>
+    </view>
+    <view class="price-note">* 以上价格为参考价，最终报价以款式、数量、工艺确认后为准</view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <view class="bar-left" bindtap="callPhone">
+      <text class="bar-icon">📞</text>
+      <text class="bar-text">电话咨询</text>
+    </view>
+    <button class="bar-inquiry" bindtap="goInquiry">提交定制询价单</button>
+  </view>
+</view>
+
+<view class="empty-tip" wx:else>商品不存在或已下架</view>
