@@ -1,0 +1,79 @@
+/* pages/result/result.wxss 结果页样式 */
+
+.page {
+  min-height: 100vh;
+  padding: 80rpx 32rpx;
+}
+.result-card {
+  padding: 60rpx 40rpx 48rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  text-align: center;
+}
+.success-icon {
+  display: flex;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto 28rpx;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e8f5ec;
+  color: #2eb45c;
+  font-size: 64rpx;
+  font-weight: 700;
+}
+.title {
+  display: block;
+  color: #1f2329;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+.subtitle {
+  display: block;
+  margin-top: 14rpx;
+  color: #8a929c;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 26rpx 0;
+  margin-top: 24rpx;
+  border-top: 2rpx solid #eceff2;
+  font-size: 28rpx;
+}
+.info-label {
+  color: #8a929c;
+}
+.info-value {
+  color: #1f2329;
+  font-weight: 600;
+}
+.tip-box {
+  margin: 16rpx 0 32rpx;
+  padding: 24rpx;
+  border-radius: 12rpx;
+  background: #fff7ef;
+  color: #a05a20;
+  font-size: 22rpx;
+  line-height: 1.6;
+  text-align: left;
+}
+.btn-block {
+  width: 100%;
+  margin-top: 20rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.btn-block::after {
+  border: none;
+}
+.btn-ghost {
+  background: #fff;
+  color: #204e8a;
+  border: 2rpx solid #204e8a;
+}
