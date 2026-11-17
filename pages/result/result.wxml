@@ -1,0 +1,24 @@
+<!-- pages/result/result.wxml 询价提交结果页 -->
+<view class="page">
+  <view class="result-card">
+    <view class="success-icon">✓</view>
+    <text class="title">提交成功</text>
+    <text class="subtitle">您的询价需求已记录，我们将尽快与您联系</text>
+
+    <view class="info-row">
+      <text class="info-label">询价单号</text>
+      <text class="info-value">{{id}}</text>
+    </view>
+    <view class="info-row">
+      <text class="info-label">联系电话</text>
+      <text class="info-value">{{phone}}</text>
+    </view>
+
+    <view class="tip-box">
+      <text>演示版提示：数据仅保存在本机，正式使用请接入云端存储以便商家接收询盘。</text>
+    </view>
+
+    <button class="btn-primary btn-block" bindtap="goHome">返回首页</button>
+    <button class="btn-ghost btn-block" bindtap="goInquiry">再填一单</button>
+  </view>
+</view>
