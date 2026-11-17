@@ -1,0 +1,125 @@
+/* pages/products/products.wxss 产品列表页样式 */
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+/* 顶部分类筛选 */
+.filter-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  white-space: nowrap;
+  background: #fff;
+  border-bottom: 2rpx solid #eceff2;
+}
+.filter-list {
+  display: inline-flex;
+  padding: 0 16rpx;
+}
+.filter-item {
+  display: inline-block;
+  padding: 28rpx 28rpx 24rpx;
+  color: #646a73;
+  font-size: 28rpx;
+  position: relative;
+}
+.filter-item.active {
+  color: #204e8a;
+  font-weight: 700;
+}
+.filter-item.active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 8rpx;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  background: #204e8a;
+}
+
+/* 商品列表 */
+.list {
+  padding: 24rpx;
+}
+.list-card {
+  display: flex;
+  margin-bottom: 24rpx;
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(31, 35, 41, 0.04);
+}
+.list-img {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 14rpx;
+  flex-shrink: 0;
+}
+.list-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 24rpx;
+  min-width: 0;
+}
+.list-name {
+  color: #1f2329;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.list-desc {
+  margin-top: 8rpx;
+  color: #8a929c;
+  font-size: 24rpx;
+  line-height: 1.4;
+}
+.list-tags {
+  display: flex;
+  margin-top: 12rpx;
+}
+.tag {
+  padding: 4rpx 14rpx;
+  margin-right: 12rpx;
+  border-radius: 6rpx;
+  background: #eaf1fa;
+  color: #204e8a;
+  font-size: 20rpx;
+}
+.list-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 14rpx;
+}
+.list-price {
+  color: #e8833a;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.list-cta {
+  color: #204e8a;
+  font-size: 24rpx;
+}
+
+/* 询价引导 */
+.inquiry-tip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8rpx 24rpx 0;
+  padding: 28rpx;
+  border-radius: 16rpx;
+  background: #fff7ef;
+  color: #a05a20;
+  font-size: 24rpx;
+}
+.inquiry-tip-btn {
+  color: #e8833a;
+  font-weight: 700;
+  white-space: nowrap;
+}
