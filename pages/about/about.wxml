@@ -1,0 +1,96 @@
+<!-- pages/about/about.wxml 关于我们页：公司简介 + 工厂实拍 + 联系方式 -->
+<view class="page">
+  <!-- 公司头部 -->
+  <view class="about-hero">
+    <image class="hero-logo" src="/assets/images/logo.png" mode="aspectFit" />
+    <text class="hero-name">{{contact.company}}</text>
+    <text class="hero-slogan">专注工装与团体服装定制，打造专业团队形象</text>
+  </view>
+
+  <!-- 公司简介 -->
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">公司简介</text>
+    </view>
+    <view class="intro-content">
+      <text>{{intro.p1}}</text>
+      <text>{{intro.p2}}</text>
+      <text>{{intro.p3}}</text>
+    </view>
+    <view class="stat-row">
+      <view class="stat" wx:for="{{stats}}" wx:key="label">
+        <text class="stat-num">{{item.value}}</text>
+        <text class="stat-label">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 经营范围 -->
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">经营范围</text>
+    </view>
+    <view class="business-list">
+      <text class="business" wx:for="{{business}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 工厂实拍 -->
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">工厂实拍</text>
+    </view>
+    <view class="factory-grid">
+      <view class="factory-item" wx:for="{{factories}}" wx:key="image">
+        <image class="factory-img" src="{{item.image}}" mode="aspectFill" bindtap="previewFactory" data-index="{{index}}" />
+        <text class="factory-caption">{{item.caption}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="section">
+    <view class="section-head">
+      <text class="section-title">联系我们</text>
+    </view>
+    <view class="contact-list">
+      <view class="contact-row" bindtap="callPhone" data-phone="{{contact.mobile}}">
+        <text class="contact-icon">📱</text>
+        <text class="contact-label">手机</text>
+        <text class="contact-value">{{contact.mobile}}</text>
+        <text class="contact-action">拨打</text>
+      </view>
+      <view class="contact-row" bindtap="callPhone" data-phone="{{contact.phone}}">
+        <text class="contact-icon">☎️</text>
+        <text class="contact-label">座机</text>
+        <text class="contact-value">{{contact.phone}}</text>
+        <text class="contact-action">拨打</text>
+      </view>
+      <view class="contact-row" bindtap="copyText" data-text="{{contact.wechat}}">
+        <text class="contact-icon">💬</text>
+        <text class="contact-label">微信</text>
+        <text class="contact-value">{{contact.wechat}}</text>
+        <text class="contact-action">复制</text>
+      </view>
+      <view class="contact-row" bindtap="copyText" data-text="{{contact.email}}">
+        <text class="contact-icon">✉️</text>
+        <text class="contact-label">邮箱</text>
+        <text class="contact-value">{{contact.email}}</text>
+        <text class="contact-action">复制</text>
+      </view>
+      <view class="contact-row" bindtap="copyText" data-text="{{contact.address}}">
+        <text class="contact-icon">📍</text>
+        <text class="contact-label">地址</text>
+        <text class="contact-value contact-address">{{contact.address}}</text>
+        <text class="contact-action">复制</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-actions">
+    <button class="btn-primary action-btn" bindtap="goInquiry">提交询价单</button>
+  </view>
+
+  <view class="footer">© 深圳市金丽星服装有限公司 版权所有</view>
+</view>
