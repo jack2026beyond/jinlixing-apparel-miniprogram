@@ -1,0 +1,41 @@
+<!-- pages/products/products.wxml 产品列表页：顶部分类筛选 + 商品列表 -->
+<view class="page">
+  <!-- 分类筛选标签 -->
+  <scroll-view class="filter-bar" scroll-x="{{true}}">
+    <view class="filter-list">
+      <view
+        class="filter-item {{currentKey === item.key ? 'active' : ''}}"
+        wx:for="{{filters}}"
+        wx:key="key"
+        bindtap="onFilterTap"
+        data-key="{{item.key}}">{{item.name}}</view>
+    </view>
+  </scroll-view>
+
+  <!-- 商品列表 -->
+  <view class="list">
+    <view class="list-card" wx:for="{{products}}" wx:key="id" bindtap="onProductTap" data-id="{{item.id}}">
+      <image class="list-img" src="{{item.image}}" mode="aspectFill" />
+      <view class="list-info">
+        <text class="list-name">{{item.name}}</text>
+        <text class="list-desc">{{item.desc}}</text>
+        <view class="list-tags">
+          <text class="tag">{{item.moq}}件起订</text>
+          <text class="tag" wx:if="{{item.specs.length > 0}}">多规格可选</text>
+        </view>
+        <view class="list-bottom">
+          <text class="list-price">{{item.price > 0 ? '¥' + item.price + ' / 件起' : '按需报价'}}</text>
+          <text class="list-cta">查看详情 ></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty-tip" wx:if="{{products.length === 0}}">该分类暂无商品</view>
+
+  <!-- 底部询价引导 -->
+  <view class="inquiry-tip" bindtap="goInquiry">
+    <text>没找到合适的款式？提交定制需求，专人为您服务</text>
+    <text class="inquiry-tip-btn">去询价 ></text>
+  </view>
+</view>
