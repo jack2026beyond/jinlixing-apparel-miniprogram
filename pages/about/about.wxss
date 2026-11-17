@@ -1,0 +1,162 @@
+/* pages/about/about.wxss 关于我们页样式 */
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 60rpx;
+}
+
+/* 公司头部 */
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48rpx 32rpx 56rpx;
+  background: linear-gradient(135deg, #1a3f70, #204e8a);
+}
+.hero-logo {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 24rpx;
+  background: #fff;
+}
+.hero-name {
+  margin-top: 20rpx;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 700;
+  text-align: center;
+}
+.hero-slogan {
+  margin-top: 12rpx;
+  color: #c9dcf0;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+/* 公司简介 */
+.intro-content text {
+  display: block;
+  color: #4a5159;
+  font-size: 26rpx;
+  line-height: 1.9;
+  text-indent: 2em;
+  margin-bottom: 8rpx;
+}
+.stat-row {
+  display: flex;
+  margin-top: 28rpx;
+  padding: 28rpx 0 8rpx;
+  border-top: 2rpx solid #eceff2;
+}
+.stat {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-num {
+  color: #204e8a;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+.stat-label {
+  margin-top: 8rpx;
+  color: #98a0aa;
+  font-size: 22rpx;
+}
+
+/* 经营范围 */
+.business-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.business {
+  padding: 14rpx 28rpx;
+  margin: 0 16rpx 16rpx 0;
+  border-radius: 40rpx;
+  background: #eaf1fa;
+  color: #204e8a;
+  font-size: 24rpx;
+}
+
+/* 工厂实拍 */
+.factory-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.factory-item {
+  width: 48%;
+  margin-bottom: 20rpx;
+}
+.factory-img {
+  width: 100%;
+  height: 240rpx;
+  border-radius: 14rpx;
+  display: block;
+}
+.factory-caption {
+  display: block;
+  margin-top: 10rpx;
+  color: #4a5159;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+/* 联系方式 */
+.contact-list {
+  margin-top: 4rpx;
+}
+.contact-row {
+  display: flex;
+  align-items: center;
+  padding: 26rpx 0;
+  border-bottom: 2rpx solid #eceff2;
+}
+.contact-row:last-child {
+  border-bottom: none;
+}
+.contact-icon {
+  width: 48rpx;
+  font-size: 32rpx;
+}
+.contact-label {
+  width: 80rpx;
+  color: #8a929c;
+  font-size: 26rpx;
+}
+.contact-value {
+  flex: 1;
+  color: #1f2329;
+  font-size: 26rpx;
+  word-break: break-all;
+}
+.contact-address {
+  font-size: 24rpx;
+}
+.contact-action {
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+  background: #eaf1fa;
+  color: #204e8a;
+  font-size: 22rpx;
+}
+
+/* 底部按钮 */
+.bottom-actions {
+  margin: 32rpx 24rpx 0;
+}
+.action-btn {
+  width: 100%;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+.action-btn::after {
+  border: none;
+}
+.footer {
+  padding: 32rpx 0;
+  text-align: center;
+  color: #b0b6bd;
+  font-size: 20rpx;
+}
